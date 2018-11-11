@@ -1,17 +1,3 @@
-
-function fetchNumPlayersInGame(placeUrl) {
-
-return new Promise((resolve, reject) => {
-    request(placeUrl, (err, response, body) => {
-        if (err) reject(err)
-        else {
-            let $ = cheerio.load(body)
-            resolve($('.game-stat .text-lead').first().text())
-        }
-    })
-}) 
-}
-
 exports.run = (message, args) => {
   message.channel
     .send({ embed: { description: 'Pinging...' } })
@@ -20,7 +6,7 @@ exports.run = (message, args) => {
         embed: {
           title: 'Pong! 🏓',
           description: `${newMessage.createdTimestamp -
-            message.createdTimestamp} ms ${fetchNumPlayersInGame(args)}`
+            message.createdTimestamp} ms {args}`
         }
       });
     })
