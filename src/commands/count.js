@@ -6,7 +6,7 @@ exports.run = (message, args) => {
         embed: {
           title: 'Pong! 🏓',
           description: `${newMessage.createdTimestamp -
-            message.createdTimestamp} ms ${playing}`
+            message.createdTimestamp} ms ${args}`
         }
       });
     })
