@@ -1,5 +1,5 @@
 const get = require('simple-get')
-$ npm install superagent
+
 exports.run = (message, args) => {
   var playing
   get.concat('http://games.roblox.com/v1/games/2487325459/servers/Public?sortOrder=Asc&limit=10', function (err, res, data) {
